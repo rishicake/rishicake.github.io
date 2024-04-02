@@ -10,16 +10,9 @@
     <title>Happy birthday  !!</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="description" content="rishita's birthday.">
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <meta property="og:url" content="hello rishita">
-
 </head>
 <link rel="stylesheet" type="text/css" href="./style.css">
 <script type="text/javascript" src="./jquery.js"></script>
@@ -33,11 +26,22 @@
       <h2 class="twenty-one block">2</h2>
       <img class="image block" src="https://i.imgur.com/PtEeqdU.jpeg"><h2 class="twenty-one block"> !! </h2>
     </div>
-    <h1 class="bday">Happy Birthday <a href="https://www.instagram.com/3.rishita_gagrani?igsh=d2cxOGljbXc4OHp4"> @3.rishita_gagrani.. </a></h1>
+    <h1 class="bday">Happy Birthday <a href="https://www.instagram.com/3.rishita_gagrani?igsh=d2cxOGljbXc4OHp4"> @3.rishita_gagrani.. 
+    </a></h1>
   </div>
   <div style="display:none">
-			
-                       <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/473898504%3Fsecret_token%3Ds-xxcit&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
-		</div>
 </div>
+
+<script>
+var audio = new Audio('https://anandify.s3.ap-south-1.amazonaws.com/Maula+Mere+Maula_cut.mp3');
+var isPlaying = false;
+
+document.addEventListener('click', function() {
+  if (!isPlaying) {
+    audio.play();
+    isPlaying = true;
+  }
+});
+</script>
+
 </html>
