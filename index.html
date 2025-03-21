@@ -1,47 +1,76 @@
-<!--
-,-,-. ,-. ,-| ,-.   |-. . .    ,-. ,-. . , , ... ...
-| | | ,-| | | |-'   | | | |    |-| | | | |,  |..  |
-' ' ' `-^ `-' `-'   `-' `-|    ' ' ' ' ' ' ' '..  '
-© 2024 aniket anand •  her rights reserved. 
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Happy birthday  !!</title>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="description" content="rishita's birthday.">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta property="og:url" content="hello rishita">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffebcd;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .cat {
+            width: 100px;
+            animation: bounce 1.5s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        #countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-<link rel="stylesheet" type="text/css" href="./style.css">
-<script type="text/javascript" src="./jquery.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
-<div class="cover super-centered-container">
-  <canvas id="can">Get a browser, There's is an error
-  <script type="text/javascript" src="./java.js"></script>
-  </canvas>
-  <div class="overlay-static">    
-    <div class="inline-blocks">
-      <h2 class="twenty-one block">2</h2>
-      <img class="image block" src="https://i.imgur.com/PtEeqdU.jpeg"><h2 class="twenty-one block"> !! </h2>
+<body>
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" alt="Cute Cat" class="cat">
+        <h1>Coming Soon! 🐱</h1>
+        <p>Something amazing is on its way. Stay tuned!</p>
+        <div id="countdown"></div>
     </div>
-    <h1 class="bday">Happy Birthday <a href="https://www.instagram.com/3.rishita_gagrani?igsh=d2cxOGljbXc4OHp4"> @3.rishita_gagrani.. 
-    </a></h1>
-  </div>
-  <div style="display:none">
-</div>
-
+<div id="countdown"></div>
 <script>
-var audio = new Audio('https://anandify.s3.ap-south-1.amazonaws.com/Maula+Mere+Maula_cut.mp3');
-var isPlaying = false;
+    function startCountdown(targetDate) {
+        let targetTime = new Date(targetDate).getTime();
+        let interval = setInterval(function () {
+            let now = new Date().getTime();
+            let timeLeft = targetTime - now;
 
-document.addEventListener('click', function() {
-  if (!isPlaying) {
-    audio.play();
-    isPlaying = true;
-  }
-});
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                document.getElementById('countdown').innerText = "Time's up!";
+                return;
+            }
+
+            let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerText =
+                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }, 1000);
+    }
+
+    startCountdown("2025-04-03T00:00:00"); 
 </script>
-
+</body>
 </html>
